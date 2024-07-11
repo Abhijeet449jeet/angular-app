@@ -5,8 +5,12 @@ APP_DIR="/home/ec2-user/angular-app"
 
 # Check if the application directory exists
 if [ ! -d "$APP_DIR" ]; then
-    echo "Error: Directory $APP_DIR not found. Exiting script."
-    exit 1
+    echo "Error: Directory $APP_DIR not found. Creating directory..."
+    mkdir -p "$APP_DIR"
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to create directory $APP_DIR. Exiting script."
+        exit 1
+    fi
 fi
 
 # Change directory to the application directory
