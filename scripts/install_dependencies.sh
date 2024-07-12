@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define variables
-APP_DIR="/home/ec2-user/angular-app"
+APP_DIR="/home/ubuntu/angular-app"
 
 # Check if the application directory exists
 if [ ! -d "$APP_DIR" ]; then
@@ -15,12 +15,6 @@ fi
 
 # Change directory to the application directory
 cd "$APP_DIR" || exit 1
-
-# Source nvm to use the correct Node.js version and npm
-export NVM_DIR="/root/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm use v20.1.0
 
 # Check if npm is installed and available
 if ! command -v npm &> /dev/null; then
