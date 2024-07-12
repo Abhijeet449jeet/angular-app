@@ -22,6 +22,9 @@ if ! command -v npm &> /dev/null; then
     exit 1
 fi
 
+# Navigate to the directory containing package.json
+cd /home/ubuntu/angular-app
+
 # Install dependencies using npm
 npm install
 
